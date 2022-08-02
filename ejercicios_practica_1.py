@@ -16,7 +16,7 @@ def ej1():
     print('Ejercicios con diccionarios 1º')
     # Crear un diccionario vacio
     # el diccionario vacio debe llamarse "stock"
-    
+    stock = {}
     # stock = ....
 
     # Luego de crear el diccionario completelo
@@ -24,7 +24,7 @@ def ej1():
     # tornillos = 100
     # tuercas = 150
     # arandelas = 300
-
+    stock = {"tornillos":100, "tuerca":150, "arandelas":300}
     # Los nombres tornillos, tuercas y arandelas
     # son las claves (keys) del diccionario
     # mientras que las cantidades son los valores (values)
@@ -32,7 +32,8 @@ def ej1():
     # Una vez armado el diccionario imprimirlo en pantalla con print
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
-
+    print(stock)
+    return(stock)
 
 def ej2():
     print('Ejercicio con diccionarios 2º')
@@ -40,7 +41,7 @@ def ej2():
     # como una base de datos. Comenzaremos con un diccionario de stock
     # de nuestros productos en cero:
     
-    strock = {'tornillos': 0, 'tuercas': 0, 'arandelas': 0}
+    stock = {'tornillos': 0, 'tuercas': 0, 'arandelas': 0}
 
     # Paso 1:
     # Crear un bucle utilizando while que se ejecute de forma infinita
@@ -65,8 +66,36 @@ def ej2():
     # Cuando el usuario ingrese "FIN" y se termine el bucle, debe
     # imprimir en pantalla con print el diccionario con el stock final
 
-    # Comenzar aquí, recuerde el identado dentro de esta funcion
+    # Comenzar aquí, recuerde el identado dentro de esta funcion   
+    while True:
+        p_ingresado = str(input("Que producto desea ingresar: \n"))
+        
+        if p_ingresado == "FIN":
+                print("Terminamos")
+                print(stock)
+                break
+        elif p_ingresado == "tornillos":
+            c_tornillo = int(input("Ingrese la cantidad:\n"))
+            stock["tornillos"] =+ c_tornillo
+        elif p_ingresado == "tuercas":
+            c_tornillo = int(input("Ingrese la cantidad:\n"))
+            stock["tuercas"] =+ c_tornillo
+        elif p_ingresado == "arandelas":
+            c_tornillo = int(input("Ingrese la cantidad:\n"))
+            stock["arandelas"] =+ c_tornillo
+        else:
+            print("El producto no existe")
+                    
+            
 
+       
+        
+      
+
+
+            
+    
+            
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")

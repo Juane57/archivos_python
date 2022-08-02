@@ -27,7 +27,20 @@ def ej3():
     # para cumplir con el enunciado del ejercicio
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
-    
+    with open ("stock.csv", "r") as csvfile:
+        lista_stock = list(csv.DictReader(csvfile))
+        tornillos_s = 0
+        
+
+        for k in lista_stock:
+
+            tornillos_s += int(k["tornillos"])
+        print(f"El stok de tornillos es {tornillos_s}")    
+        return tornillos_s
+            
+
+
+
 
 
 def ej4():
@@ -47,6 +60,22 @@ def ej4():
     # utilizando "try except", tema que se verá la clase que viene.
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
+    with open ('propiedades.csv',"r") as csvfile:
+        departamentos = list(csv.DictReader(csvfile))
+        d_ambientes = 0
+        t_ambientes = 0
+
+        for k in departamentos:
+            try:
+                if int(k["ambientes"]) == 2:
+                    d_ambientes += 1
+                    
+                elif int(k["ambientes"]) == 3:
+                    t_ambientes += 1
+            except:
+                continue
+        print(f"Se registra {d_ambientes} departamentos dos ambientes")
+        print(f"Se registra {t_ambientes} departamentos tres ambientes")    
 
 
 if __name__ == '__main__':
